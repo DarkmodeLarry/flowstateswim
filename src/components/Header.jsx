@@ -1,6 +1,19 @@
+import { useNavigate } from 'react-router-dom'
 import { NavLink } from 'react-router-dom'
+import { useEffect } from 'react'
 
 export default function Navbar() {
+  const navigate = useNavigate()
+  const user = JSON.parse(localStorage.getItem('user'))
+
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem('user'))
+
+    if (!user) {
+      navigate('/login')
+    }
+  }, [])
+
   return (
     <nav className='w-full h-20 '>
       <h1 className='montserrat font-extrabold italic text-2xl tracking-tighter text-cyan-400 text-center my-5'>
@@ -23,7 +36,14 @@ export default function Navbar() {
           </NavLink>
         </li>
         <li>
-          <button>Logout</button>
+          <button
+            onClick={() => {
+              localStorage.removeItem('user')
+              navigate('/login')
+            }}
+          >
+            Logout
+          </button>
         </li>
       </ul>
     </nav>

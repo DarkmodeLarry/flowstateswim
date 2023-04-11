@@ -17,7 +17,7 @@ function Navbar() {
     <footer className='fixed bottom-0 h-24 bg-orange-400 flex justify-center items-center w-full'>
       <nav className=' w-full'>
         <ul className='flex justify-evenly w-full'>
-          <li className='cursor-pointer' onClick={() => navigate('/home')}>
+          <li className='cursor-pointer' onClick={() => navigate('/')}>
             <AiTwotoneHome className='text-3xl text-black' />
           </li>
           <li className='cursor-pointer'>
