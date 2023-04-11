@@ -87,7 +87,7 @@ function Signup() {
       <Form
         layout='vertical'
         onFinish={onFinish}
-        className='relative rounded-md bg-black/75 py-10 px-6 md:mt-0 w-[500px] md:px-14 text-gray-100'
+        className='relative rounded-md bg-black/75 py-10 px-6 md:mt-0 w-[360px] md:w-[500px] md:px-14 text-gray-100'
       >
         <h1 className='text-4xl text-gray-200 font-semibold'>Sign Up</h1>
 

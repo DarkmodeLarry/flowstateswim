@@ -50,7 +50,7 @@ function Login() {
       <Form
         layout='vertical'
         onFinish={onFinished}
-        className='relative rounded-md bg-black/75 py-10 px-6  w-[500px] md:px-14 text-gray-100'
+        className='relative rounded-md bg-black/75 py-10 px-6  w-[360px] md:w-[500px] md:px-14 text-gray-100'
       >
         <h1 className='text-4xl text-gray-200 font-semibold'>Sign In</h1>
 
@@ -77,7 +77,7 @@ function Login() {
           Forgot Password?
         </Link>
         <Button
-          className='w-full contained-btn rounded bg-cyan-600 py-5 flex items-center justify-center text-gray-100 tracking-wide font-semibold'
+          className='w-full contained-btn rounded bg-cyan-800 py-5 my-4 flex items-center justify-center text-gray-200 tracking-wide font-semibold'
           htmlType='submit'
         >
           Sign In
