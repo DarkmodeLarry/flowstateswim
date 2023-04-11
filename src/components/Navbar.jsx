@@ -1,28 +1,35 @@
-import { Link } from 'react-router-dom'
-import { useLogout } from '../hooks/useLogout'
+import { useNavigate, useLocation } from 'react-router-dom'
+import { AiTwotoneHome } from 'react-icons/ai'
+import { FiUser } from 'react-icons/fi'
+import { GrBarChart } from 'react-icons/gr'
+import React from 'react'
 
-export default function Navbar() {
-  const { logout } = useLogout()
+function Navbar() {
+  const navigate = useNavigate()
+  const location = useLocation()
 
+  const pathMatchRoute = (route) => {
+    if (route === location.pathname) {
+      return true
+    }
+  }
   return (
-    <nav className='w-full h-20 '>
-      <h1 className='montserrat font-extrabold italic text-2xl tracking-tighter text-cyan-400 text-center'>
-        Flow State Swim
-      </h1>
-      <ul className='flex justify-evenly w-full'>
-        <li>
-          <Link to='/'>Home</Link>
-        </li>
-        <li>
-          <Link to='/login'>Login</Link>
-        </li>
-        <li>
-          <Link to='/signup'>Signup</Link>
-        </li>
-        <li>
-          <button onClick={logout}>Logout</button>
-        </li>
-      </ul>
-    </nav>
+    <footer className='fixed bottom-0 h-24 bg-orange-400 flex justify-center items-center w-full'>
+      <nav className=' w-full'>
+        <ul className='flex justify-evenly w-full'>
+          <li className='cursor-pointer' onClick={() => navigate('/home')}>
+            <AiTwotoneHome className='text-3xl text-black' />
+          </li>
+          <li className='cursor-pointer'>
+            <GrBarChart className='text-3xl' onClick={() => navigate('/stats')} />
+          </li>
+          <li className='cursor-pointer'>
+            <FiUser className='text-3xl text-black' onClick={() => navigate('/profile')} />
+          </li>
+        </ul>
+      </nav>
+    </footer>
   )
 }
+
+export default Navbar

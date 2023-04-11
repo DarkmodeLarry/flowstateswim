@@ -1,9 +1,9 @@
 import { useState } from 'react'
 
-import { db } from '../firebase/config'
+import db from '../firebase.config'
 import { collection, addDoc } from 'firebase/firestore'
 
-export default function MenuForm() {
+function MenuForm() {
   const [newItem, setNewItem] = useState('')
 
   const handleSubmit = async (e) => {
@@ -34,3 +34,5 @@ export default function MenuForm() {
     </div>
   )
 }
+
+export default MenuForm
