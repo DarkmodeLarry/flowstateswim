@@ -26,7 +26,7 @@ function Home() {
   }, [])
 
   return (
-    <div className='max-w-full flex flex-col'>
+    <div className='max-w-full flex flex-col mb-24'>
       <div className='py-10 text-gray-200 text-lg montserrat tracking-wide font-semibold'>
         <h1 className='w-full text-center'>Ready to Swim?</h1>
         <p className='text-center'>

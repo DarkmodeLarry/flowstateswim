@@ -27,9 +27,9 @@ function ProtectedRoute({ children }) {
           </h2>
 
           {user && (
-            <div className='flex gap-3 items-center w-full '>
+            <div className='flex gap-3 items-center w-full pt-6'>
               <div className='flex gap-1 items-center w-full justify-start'>
-                <div className='flex items-center gap-2 py-1 px-3 justify-between rounded-full bg-gray-100'>
+                <div className='flex items-center gap-2 py-1 px-3 justify-between rounded-full bg-gray-100 border-orange-500 border-4'>
                   <FaUserNinja className='w-8 h-8 text-black' />
                   <p className='text-black capitalize font-semibold montserrat pt-2'>
                     Hey {user.firstName}!

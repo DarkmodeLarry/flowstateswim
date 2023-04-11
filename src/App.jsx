@@ -14,6 +14,7 @@ import Spinner from './components/Spinner'
 
 function App() {
   const { loading } = useSelector((state) => state.loader)
+
   return (
     <div>
       {loading && <Spinner />}
