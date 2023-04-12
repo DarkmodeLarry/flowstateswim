@@ -2,7 +2,7 @@ import { Button, Form, Input } from 'antd'
 import { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
-import eyeIcon from '../assets/visibilityIcon.svg'
+import eyeIcon from '../assets/icons/visibilityIcon.svg'
 import { useDispatch } from 'react-redux'
 import { ShowLoader } from '../redux/loaderSlice'
 import { LoginUser } from '../utils/loginUser'
@@ -28,11 +28,15 @@ function Login() {
         )
         navigate('/')
       } else {
-        toast.error(response.message)
+        toast.error(response.message, {
+          position: toast.POSITION.BOTTOM_CENTER
+        })
       }
     } catch (error) {
       dispatch(ShowLoader(false))
-      toast.error('Login error, Please try again.')
+      toast.error('Login error, Please try again.', {
+        position: toast.POSITION.BOTTOM_CENTER
+      })
     }
   }
 

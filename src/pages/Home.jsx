@@ -26,15 +26,17 @@ function Home() {
   }, [])
 
   return (
-    <div className='max-w-full flex flex-col mb-24'>
+    <div className='max-w-full justify-center flex flex-col mb-24'>
       <div className='py-10 text-gray-200 text-lg montserrat tracking-wide font-semibold'>
-        <h1 className='w-full text-center'>Ready to Swim?</h1>
-        <p className='text-center'>
+        <h1 className='w-full text-center text-[#272a2b]'>Ready to Swim?</h1>
+        <p className='text-center text-[#272a2b]'>
           Book one of our available sessions or join our membership program
         </p>
       </div>
-      <div className=''>{menu && <MenuList menu={menu} />}</div>
-      <div className=''>{/* <MenuForm /> */}</div>
+      <h3 className='text-center w-full text-[var(--black)] spacegrotesk text-xl underline'>
+        Training Menu
+      </h3>
+      <div className='flex flex-col justify-center'>{menu && <MenuList menu={menu} />}</div>
     </div>
   )
 }

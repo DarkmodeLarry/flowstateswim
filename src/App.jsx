@@ -11,6 +11,7 @@ import Profile from './pages/Profile'
 import LandingPage from './pages/LandingPage'
 import { useSelector } from 'react-redux'
 import Spinner from './components/Spinner'
+import Team from './pages/Team'
 
 function App() {
   const { loading } = useSelector((state) => state.loader)
@@ -38,6 +39,14 @@ function App() {
             element={
               <ProtectedRoute>
                 <Profile />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path='/team'
+            element={
+              <ProtectedRoute>
+                <Team />
               </ProtectedRoute>
             }
           />

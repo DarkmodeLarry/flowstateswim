@@ -1,7 +1,7 @@
 import { useNavigate, useLocation } from 'react-router-dom'
 import { AiTwotoneHome } from 'react-icons/ai'
 import { FiUser } from 'react-icons/fi'
-import { GrBarChart } from 'react-icons/gr'
+import { CiGrid41 } from 'react-icons/ci'
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
@@ -15,22 +15,22 @@ function Navbar() {
     }
   }
   return (
-    <footer className='fixed bottom-0 h-16 bg-cyan-500 flex justify-center items-center w-full'>
+    <footer className='footer fixed bottom-0 h-16 bg-[var(--black)] flex justify-center items-center w-full'>
       <nav className=' w-full'>
         <ul className='flex justify-evenly w-full'>
           <li
             className='cursor-pointer flex flex-col items-center justify-center'
             onClick={() => navigate('/')}
           >
-            <AiTwotoneHome className='text-2xl text-black' />
+            <AiTwotoneHome className='text-2xl text-gray-200' />
             <p className=''>Home</p>
           </li>
-          <li className='cursor-pointer flex flex-col items-center justify-center'>
-            <GrBarChart className='text-2xl' onClick={() => navigate('/stats')} />
-            <p className=''>Stats</p>
+          <li className='cursor-pointer flex flex-col items-center justify-center '>
+            <CiGrid41 className='text-2xl text-gray-200' onClick={() => navigate('/team')} />
+            <p className=''>Team</p>
           </li>
           <li className='cursor-pointer flex flex-col items-center justify-center'>
-            <FiUser className='text-2xl text-black' onClick={() => navigate('/profile')} />
+            <FiUser className='text-2xl text-gray-200' onClick={() => navigate('/profile')} />
             <p className=''>Profile</p>
           </li>
         </ul>
