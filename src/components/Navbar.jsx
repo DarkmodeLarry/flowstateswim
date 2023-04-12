@@ -25,12 +25,18 @@ function Navbar() {
             <AiTwotoneHome className='text-2xl text-gray-200' />
             <p className=''>Home</p>
           </li>
-          <li className='cursor-pointer flex flex-col items-center justify-center '>
-            <CiGrid41 className='text-2xl text-gray-200' onClick={() => navigate('/team')} />
+          <li
+            className='cursor-pointer flex flex-col items-center justify-center'
+            onClick={() => navigate('/team')}
+          >
+            <CiGrid41 className='text-2xl text-gray-200' />
             <p className=''>Team</p>
           </li>
-          <li className='cursor-pointer flex flex-col items-center justify-center'>
-            <FiUser className='text-2xl text-gray-200' onClick={() => navigate('/profile')} />
+          <li
+            className='cursor-pointer flex flex-col items-center justify-center'
+            onClick={() => navigate('/profile')}
+          >
+            <FiUser className='text-2xl text-gray-200' />
             <p className=''>Profile</p>
           </li>
         </ul>

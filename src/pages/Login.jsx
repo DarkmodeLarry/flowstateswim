@@ -46,7 +46,7 @@ function Login() {
   }, [])
 
   return (
-    <div className='relative flex h-screen w-screen flex-col items-center justify-center md:bg-transparent bg-black'>
+    <div className='bg-[#272a2b] relative flex h-screen w-screen flex-col items-center justify-center md:bg-transparent '>
       <div className='text-4xl montserrat italic font-extrabold tracking-tighter p-4'>
         <h1 className='text-cyan-500'>Welcome Back!</h1>
       </div>
