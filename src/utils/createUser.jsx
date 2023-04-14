@@ -1,4 +1,5 @@
 import { addDoc, collection, getDocs, query, where } from 'firebase/firestore'
+import { createUserWithEmailAndPassword, getAuth } from 'firebase/auth'
 import db from '../firebase.config'
 import CryptoJS from 'crypto-js'
 
@@ -14,14 +15,26 @@ export const CreateUser = async (payload) => {
     // hashpassword
     const hashedPassword = CryptoJS.AES.encrypt(payload.password, 'flowstateswim-eb240').toString()
     payload.password = hashedPassword
+    const auth = getAuth()
 
+    const { user } = await createUserWithEmailAndPassword(auth, payload.email, payload.password)
+
+    // Add user to Firestore with uid
     const docRef = collection(db, 'users')
-    await addDoc(docRef, payload)
+    await addDoc(docRef, {
+      ...payload,
+      uid: user.uid,
+      createdAt: new Date()
+    })
+
     return {
       success: true,
       message: 'user created successfully'
     }
   } catch (error) {
-    return error
+    return {
+      success: false,
+      message: error.message
+    }
   }
 }

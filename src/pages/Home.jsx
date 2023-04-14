@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { getDocs, collection } from 'firebase/firestore'
 import db from '../firebase.config'
 import MenuList from '../components/MenuList'
-import MenuForm from '../components/MenuForm'
+import Pool from '../assets/img/heropage.png'
 
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
@@ -26,14 +26,15 @@ function Home() {
   }, [])
 
   return (
-    <div className='max-w-full justify-center flex flex-col mb-24'>
+    <div className='relative max-w-full justify-center flex flex-col mb-24'>
+      <img src={Pool} alt='' className='z-[-999] absolute top-0 h-96 w-full' />
       <div className='py-10 text-gray-200 text-lg montserrat tracking-wide font-semibold'>
-        <h1 className='w-full text-center text-[#272a2b]'>Ready to Swim?</h1>
-        <p className='text-center text-[#272a2b]'>
+        <h1 className='w-full text-center text-[#f5f5f5]'>Ready to Swim?</h1>
+        <p className='text-center text-[#f5f5f5]'>
           Book one of our available sessions or join our membership program
         </p>
       </div>
-      <h3 className='text-center w-full text-[var(--black)] spacegrotesk text-xl underline'>
+      <h3 className='text-center w-full text-[#f5f5f5] spacegrotesk text-xl underline'>
         Training Menu
       </h3>
       <div className='flex flex-col justify-center'>{menu && <MenuList menu={menu} />}</div>
